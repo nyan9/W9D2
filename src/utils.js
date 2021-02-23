@@ -4,6 +4,7 @@ const Util = {
     Surrogate.prototype = parentClass.prototype;
     childClass.prototype = new Surrogate();
     childClass.prototype.constructor = childClass;
+    debugger;
   },
 
   // Return a randomly oriented vector with the given length.

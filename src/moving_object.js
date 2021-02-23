@@ -1,8 +1,11 @@
+const Game =  require('./game.js');
+
 function MovingObject(args){
     this.pos = args.pos;
     this.vel = args.vel;
     this.radius = args.radius;
     this.color = args.color;
+    this.game  = args.game;
 }
 
 MovingObject.prototype.draw = function(context){
@@ -20,9 +23,11 @@ MovingObject.prototype.draw = function(context){
     context.fill();
 }
 
-MovingObject.prototype.move = function(context){
+MovingObject.prototype.move = function( ){
     this.pos[0] += this.vel[0];
     this.pos[1] += this.vel[1];
-}
 
+    // this.pos = this.game.wrap(this.pos);
+}
+debugger;
 module.exports = MovingObject;
